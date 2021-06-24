@@ -1,0 +1,2 @@
+# Customer-relationship-management
+Customer Relationship Management Abacus-Customer Relationship Management  This is a website for both Billing of any product and also to interact with the same customers associated with different registered stores in the Software.  This website builds primarily on Python using Django Framework.  Live website can be visited on the URL : https://www.platinumklub.com/
