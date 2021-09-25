@@ -1,0 +1,295 @@
+{% load static %}
+{% load overview_extras %}
+{% include 'admin_template/header.html' %}
+<!--begin::Wrapper-->
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+  <!--begin::Header-->
+  {% include "admin_template/inner-header.html" %}
+  <!--end::Header-->
+
+  <!--begin::Content-->
+  <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+    <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+      <!--begin::Container-->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 ">
+            <h4 class="title">Store Supervisor Management &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;'>{{message}}</span><span style='color:red;'>{{error_msg}}</span></h4> 
+          </div>
+          <div class="col-md-6 text-right">
+                <a href="{% url 'store_supervisor_list' %}" class="btn btn-outline-primary add-cat " >Store Supervisor List</a>
+          </div>
+          <div class="col-lg-12">
+            <div class="card card-custom gutter-b example example-compact ">
+            <div class="col-lg-12">
+            <div class="card-body pt-3 pb-0">
+                    <h4 style='text-decoration:underline;'>Edit Supervisor</h4>
+                    <form action="" enctype="multipart/form-data" method="POST">
+                                {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-lg-2 text-center pt-5">
+                                        {% if data.supervisor_image %}
+                                        <div class="image-input image-input-outline mt-5" id="kt_profile_avatar"
+                                            style="background-image: url('{{data.supervisor_image.url}}')">
+                                            <div class="image-input-wrapper"
+                                                style="background-image: url('../../static/Upload_Images/{{data.supervisor_image}}')">
+                                            </div>
+                                            <label
+                                                class="btn btn-sm btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                                data-action="change" data-toggle="tooltip" title=""
+                                                data-original-title="Change avatar">
+                                                <i class="fa fa-camera icon-md text-muted"></i>
+                                                <input type="file" name="supervisorProfileImage"
+                                                    accept=".png, .jpg, .jpeg" />
+                                                <input type="hidden" name="profile_avatar_add" />
+                                            </label>
+                                        </div>
+                                        {% else %}
+                                        <div class="image-input image-input-outline mt-5" id="kt_profile_avatar"
+                                            style="background-image: url(../../static/assets/media/users/customer_dummy_pic.jpg)">
+                                            <div class="image-input-wrapper"
+                                                style="background-image: url(../../static/assets/media/users/customer_dummy_pic.jpg)">
+                                            </div>
+                                            <label
+                                                class="btn btn-sm btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                                data-action="change" data-toggle="tooltip" title=""
+                                                data-original-title="Change avatar">
+                                                <i class="fa fa-camera icon-md text-muted"></i>
+                                                <input type="file" name="managerProfileImage"
+                                                    accept=".png, .jpg, .jpeg" />
+                                                <input type="hidden" name="profile_avatar_add" />
+                                            </label>
+                                        </div>
+                                        {% endif %}
+
+                                    </div>
+                                            <div class="col-lg-10">
+                                                <div class="form-group row">
+                                                    <div class="col-lg-4 mt-3 mb-3">
+                                                        <label><b>Supervisor Name</b><span style='color:red;'> *</span></label>
+                                                        <span id="invalidmanagername" class="text-center"
+                                                            style="color: red;"></span>
+                                                        <input type="text" id="managrName" class="form-control"
+                                                            placeholder="" value="{{data.supervisor_name}}" name="supervisor_Name"
+                                                            onkeyup="validateName()" required />
+
+                                                    </div>
+                                                    <div class="col-lg-4 mt-3 mb-3">
+                                                        <label><b>Contact No.</b><span style='color:red;'> *</span></label>
+                                                        <span id="invalidmanagercontact" class="text-center"
+                                                            style="color: red;"></span>
+                                                        <input type="number" id="ManagerContact" class="form-control"
+                                                            placeholder="Enter contact no" name="supervisor_ContactNo"
+                                                            type="number" value="{{data.supervisor_contact}}" onkeyup="validateCon(this)" onkeypress="return onlyNumberKey(event)" maxlength="10" required />
+                                                    </div>
+                                                    {% comment %} <div class="col-lg-4 mt-3 mb-3">
+                                                        <label><b>User Unique ID</b></label>
+                                                        <input type="text" class="form-control" placeholder="----------"
+                                                            name="userUinqueID" id="uniqueIDChceck" readonly />
+                                                    </div> {% endcomment %}
+                                                    <div class="col-lg-4 mt-3 mb-3">
+                                                        <label><b>Gender</b></label>
+                                                        <div class="radio-inline mt-3">
+                                                            {% if data.gender == "Male" %}
+                                                    <label class="radio radio-outline radio-outline-2x radio-primary">
+                                                        <input type="radio" name="supervisorGender" checked="checked"
+                                                            value="Male">
+                                                        <span></span>
+                                                        Male
+                                                    </label>
+                                                    <label class="radio radio-outline radio-outline-2x radio-primary">
+                                                        <input type="radio" name="supervisorGender" value="Female">
+                                                        <span></span>
+                                                        Female
+                                                    </label>
+                                                    {% else %}
+                                                    <label class="radio radio-outline radio-outline-2x radio-primary">
+                                                        <input type="radio" name="supervisorGender" value="Male">
+                                                        <span></span>
+                                                        Male
+                                                    </label>
+                                                    <label class="radio radio-outline radio-outline-2x radio-primary">
+                                                        <input type="radio" name="supervisorGender" checked="checked"
+                                                            value="Female">
+                                                        <span></span>
+                                                        Female
+                                                    </label>
+                                                    {% endif %}
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 mt-3 mb-3">
+                                                        <label><b>Email</b><span style='color:red;'> *</span></label>
+                                                        <span id="invalidmanageremail" class="text-center"
+                                                            style="color: red;"></span>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter Email" id="managerEmail"
+                                                                name="supervisorEmail" value="{{data.supervisor_email}}" onkeyup="validateEmail()"
+                                                                required />
+                                                                <input style='display:none;' type="text" class="form-control" placeholder="Enter contact no"
+                                                    value="{{data.supervisor_email}}" name="supervisorOldEmail"/>
+                                                        </div>
+
+
+                                                    </div>
+                                                    {% comment %} <div class="col-lg-4 mt-3 mb-3">
+                                                        <label><b>Address</b><span style='color:red;'> *</span></label>
+                                                        <span id="invalidmanageremail" class="text-center"
+                                                            style="color: red;"></span>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter Address" id="managerEmail"
+                                                                name="supervisorAddress" onkeyup="validateEmail()"
+                                                                required />
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="col-lg-4 mt-3 mb-3">
+                                                        <label><b>Country</b><span style='color:red;'> *</span></label>
+                                                        <span id="invalidmanageremail" class="text-center"
+                                                            style="color: red;"></span>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter Country" id="managerEmail"
+                                                                name="supervisorCountry" onkeyup="validateEmail()"
+                                                                required />
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="col-lg-4 mt-3 mb-3">
+                                                        <label><b>State</b><span style='color:red;'> *</span></label>
+                                                        <span id="invalidmanageremail" class="text-center"
+                                                            style="color: red;"></span>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter State" id="managerEmail"
+                                                                name="supervisorState" onkeyup="validateEmail()"
+                                                                required />
+                                                        </div>
+
+
+                                                    </div><div class="col-lg-4 mt-3 mb-3">
+                                                        <label><b>Pin Code</b><span style='color:red;'> *</span></label>
+                                                        <span id="invalidmanageremail" class="text-center"
+                                                            style="color: red;"></span>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter Pin Code" id="managerEmail"
+                                                                name="supervisorPincode" onkeyup="validateEmail()"
+                                                                required />
+                                                        </div>
+
+
+                                                    </div> {% endcomment %}
+                                                    
+                                                    <div class="col-lg-4 mt-3 mb-3  ">
+                                                        <label><b>Password</b><span style='color:red;'>*</span></label>
+                                                        {% comment %} <img style='width:20px;height:20px;' src="https://img.icons8.com/fluent/48/000000/info.png" data-toggle="tooltip" data-html="true" title="<em><b style='color:#8C08E4;'>Password must contain atleast</b></em> <br>1 lower case letter<br>1 upper case letter<br>1 special characters <br>1 numbers<br>and length must be minimum 10"/> {% endcomment %}
+                                                        <span id="invalidmanagerpassword" class="text-center"
+                                                            style="color: red;"></span>
+                                                        
+                                                        <span id="invalidmanagerpassword" class="text-center"
+                                                            style="color: red;"></span>
+                                                        <div class="input-group">
+
+                                                            <input type="password" class="form-control"
+                                                                placeholder="***********" name="managerPass"
+                                                                id="validateManagerpass" value=""
+                                                                onkeyup="validatePassowrd()" onclick="enablepwdcondition()"/>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="col-lg-4 mt-3 mb-3">
+                                                        <label id="checkPassmanager"><b>Confirm Password</b><span
+                                                                style='color:red;'> *</span></label>
+                                                        <div class="input-group">
+
+                                                            <input type="password" onkeyup="getPassword_Manager(this)"
+                                                                class="form-control" placeholder="***********"
+                                                                name="supervisorConfirmPass"/>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <div class="col-lg-5 mt-3 mb-3">
+                                                       
+
+                                                    </div>
+                                                    <!-- Validation div -->
+                                                    <div id="passwordCondition" class="col-lg-3 mt-3 mb-3" style="display: none;">
+                                                        <label id="checkPassmanager"><b>Password must contain</b></label><br>
+                                                        <span id='charlenadd' class="fa fa-times" style="font-weight: 600;color: red;font-size: 13px;">&nbsp;&nbsp;Atleast 8 characters</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <span id='uppercaseadd' class="fa fa-times" style="font-weight: 600;color: red;font-size: 13px;">&nbsp;&nbsp;Minimun 1 uppercase</span><br>
+                                                        <span id='numbersadd' class="fa fa-times" style="font-weight: 600;color: red;font-size: 13px;">&nbsp;&nbsp;Minimun 1 number</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <span id='symboladd' class="fa fa-times" style="font-weight: 600;color: red;font-size: 13px;">&nbsp;&nbsp;Minimun 1 symbol</span>
+                                                    </div>
+
+
+
+                                                </div>
+                                            {% comment %} <div class="col-md-12">
+                                                <label class="titles">Select Stores</label>
+                                                <a href="javascript:;" class="sel_all float-right"
+                                                    id='selectAllStore'>Select All</a>
+                                                <select class="form-control select2" id="kt_select2_3"
+                                                    name="StoreIDS" multiple="multiple"  required>
+                                                    {% for i in store_detail %} 
+                                                        <option value="{{i.id}}">{{i.store_name}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div> {% endcomment %}
+
+                                            <div class="col-md-12 mt-5 mb-2 pt-2 text-right">
+                                                <button type="submit" class="btn btn-primary"
+                                                    onclick="SupervisorDetails()"
+                                                    id=''>Submit</button>
+                                            </div><br><br>
+                                            </div>
+                                            {% comment %} </div> {% endcomment %}
+                                        </div>
+                </form>
+
+
+                                    </div>
+            </div>
+
+            <!-- store manage detail -->
+
+
+          </div>
+        </div>
+      </div>
+      <!--end::Container-->
+
+
+    </div>
+    <!--end::Entry-->
+  </div>
+  <!--end::Content-->
+  <div class="modal fade   popup" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+            <i aria-hidden="true" class="ki ki-close"></i>
+          </button>
+        </div>
+        <div class="modal-body text-center  mb-5">
+          <img src="{% static 'assets/images/check.png' %}">
+          <h3 class="mb-5">Product category added successfully. </h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </script>
+  {% include 'admin_template/footer.html' %}
+{% comment %} <script src="{% static 'AdminAbacus/supervisor.js' %}"></script> {% endcomment %}

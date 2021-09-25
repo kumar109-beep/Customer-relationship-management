@@ -1,0 +1,205 @@
+{% load static %}
+{% load overview_extras %}
+{% include 'admin_template/header.html' %}
+<!--begin::Wrapper-->
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+  <!--begin::Header-->
+  {% include "admin_template/inner-header.html" %}
+  <!--end::Header-->
+
+  <!--begin::Content-->
+  <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+    <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+      <!--begin::Container-->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 ">
+            <h4 class="title">Store Supervisor Management</h4>
+          </div>
+          <div class="col-md-6 text-right">
+            {% comment %} <form action="{% url 'generate_api_key' %}" method="post" class="d-inline" onsubmit="return confirm('Are you sure, You want to create new api key?')">
+                {% csrf_token %} {% endcomment %}
+                {% comment %} <input type="submit" value="Delete" class="btn btn-danger btn-sm"> {% endcomment %}
+                <a href="{% url 'create_store_supervisor' %}" class="btn btn-outline-primary add-cat " ><i class="fa fa-plus"></i>Create New Store Supervisor</a>
+            {% comment %} </form> {% endcomment %}
+          </div>
+          <div class="col-lg-12">
+            <div class="card card-custom gutter-b example example-compact ">
+            <div class="col-lg-12">
+              <div class="table-responsive">
+                <!--begin: Datatable-->
+                <table class=" mt-5 tbl table   dark   table-bordered p_category table-striped ">
+                  <thead>
+                    <tr>
+                      {% comment %} <th width="100">S.No</th> {% endcomment %}
+                      <th style='text-align:center;'>Supervisor Name</th>
+                      <th style='text-align:center;'>Supervisor Contact</th>
+                      <th style='text-align:center;'>Supervisor Email</th>
+                      <th style='text-align:center;'>Assigned Stores</th>
+
+
+                      <th style='text-align:center;min-width: 100px;'></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% comment %} <tr>
+                      <td style='text-align:center;'>Raman Yadav</td>
+                      <td style='text-align:center;'>1111111111</td>
+                      <td style='text-align:center;'>RamanYadav@gmail.co.in</td>
+                      <td style='text-align:center;'><span style="border:1px solid grey;color:white;background-color:#17a2b8;">USPolo Fun</span></td>
+
+                      <td style='text-align:center;'>
+                      {% comment %} <form action="{% url 'delete_api_key' item.id %}" method="post" class="d-inline" onsubmit="return confirm('Are you sure, You want to delete this api key?')">
+                            {% csrf_token %} {% endcomment %}
+                            {% comment %} <input type="submit" value="View" class="btn btn-primary btn-sm">
+                            <input type="submit" value="Edit" class="btn btn-warning btn-sm">
+                            <input type="submit" value="Delete" class="btn btn-danger btn-sm"> {% endcomment %}
+                        {% comment %} </form> {% endcomment %}
+                        {% comment %} </td>
+                    </tr>
+
+                    <tr>
+                      <td style='text-align:center;'>Manohar Singh</td>
+                      <td style='text-align:center;'>2222222222</td>
+                      <td style='text-align:center;'>manohar@gmail.co.in</td>
+                      <td style='text-align:center;'><span style="border:1px solid grey;color:white;background-color:#17a2b8;">Test</span><span style="border:1px solid grey;color:white;background-color:#17a2b8;">UCB</span><span style="border:1px solid grey;color:white;background-color:#17a2b8;">SKETCHERS</span></td>
+
+                      <td style='text-align:center;'> {% endcomment %}
+                      {% comment %} <form action="{% url 'delete_api_key' item.id %}" method="post" class="d-inline" onsubmit="return confirm('Are you sure, You want to delete this api key?')">
+                            {% csrf_token %} {% endcomment %}
+                            {% comment %} <input type="submit" value="View" class="btn btn-primary btn-sm">
+                            <input type="submit" value="Edit" class="btn btn-warning btn-sm">
+                            <input type="submit" value="Delete" class="btn btn-danger btn-sm"> {% endcomment %}
+                        {% comment %} </form> {% endcomment %}
+                        {% comment %} </td>
+                    </tr> {% endcomment %} 
+                    {% for item in data %}
+                    <tr>
+                      <td style='text-align:center;'>{{item.supervisor_name}}</td>
+                      <td style='text-align:center;'>{{item.supervisor_contact}}</td>
+                      <td style='text-align:center;'>{{item.supervisor_email}}</td>
+                      <td style='text-align:left;'>
+                        {% for j in item.stores %}
+                         <button class="btn btn-sm btn-outline-success" style="margin: 3px;">{{j}}</button>
+                          {% comment %} <l1 style="border:1px solid white;color:white;background-color:#17a2b8;font-size:10px;">{{j}}</l1>
+                        </ul> {% endcomment %}
+                        {% endfor %}
+                      </td>
+
+                      <td style='text-align:center;'>
+                            <a class="" data-toggle="modal" data-target="#exampleModalCenter" supervisorID={{item.id}} onclick="specific_store_supervisor(this)"><i style="color: orangered;" class="fas fa-eye"></i></a>&nbsp;&nbsp;
+                            <a href="{% url 'edit_supervisor' item.id %}" class=''><i style="color: steelblue;" class="fas fa-edit"></i></a>
+                            {% comment %} <a href="#" class='btn btn-sm btn-info'>Update Attached Store</a> {% endcomment %}
+
+                      {% comment %} <form action="{% url 'delete_api_key' item.id %}" method="post" class="d-inline" onsubmit="return confirm('Are you sure, You want to delete this api key?')">
+                            {% csrf_token %}
+                            <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                        </form> {% endcomment %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- store manage detail -->
+
+
+          </div>
+        </div>
+      </div>
+      <!--end::Container-->
+
+
+    </div>
+    <!--end::Entry-->
+  </div>
+  <!--end::Content-->
+  <div class="modal fade   popup" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+            <i aria-hidden="true" class="ki ki-close"></i>
+          </button>
+        </div>
+        <div class="modal-body text-center  mb-5">
+          <img src="{% static 'assets/images/check.png' %}">
+          <h3 class="mb-5">Product category added successfully. </h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="font-weight:700;">Supervisor Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <hr>
+      <div class="modal-body">
+          <div class="form-group">
+            <label style="color:black;font-weight:600;">Supervisor Name : </label>&nbsp;&nbsp;<span id="supName"></span>
+          </div>
+          <div class="form-group">
+            <label style="color:black;font-weight:600;">Supervisor Contact : </label>&nbsp;&nbsp;<span id="supContact"></span>
+          </div><div class="form-group">
+            <label style="color:black;font-weight:600;">Supervisor Email : </label>&nbsp;&nbsp;<span id="supEmail"></span>
+          </div>
+          <div class="form-group">
+            <label style="color:black;font-weight:600;">Assigned Stores : </label>&nbsp;&nbsp;<span id='storesName'></span>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+        {% comment %} <button type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+  {% include 'admin_template/footer.html' %}
+  <script>
+  function specific_store_supervisor(thisTxt){
+    $('#supName').text('')
+    $('#supContact').text('')
+    $('#supEmail').text('')
+    $('#storesName').html('')
+
+    var id = $(thisTxt).attr('supervisorID');
+
+    $.ajax({
+            type: 'GET',
+            url: "/specific_store_supervisor/"+id,
+            success: function (response) {
+                console.log(response);
+
+                $('#supName').text(response['data']['sup_name'])
+                $('#supContact').text(response['data']['sup_contact'])
+                $('#supEmail').text(response['data']['sup_email'])
+
+                var stringS = '';
+                for(var i=0;i<response['data']['stores'].length;i++){
+                  var data = '<button style="margin:3px;" class="btn btn-sm btn-secondary">'+response['data']['stores'][i]+'</button>&nbsp;&nbsp;';
+
+                  stringS = stringS + data;
+                }
+                $('#storesName').html('')
+                $('#storesName').append(stringS)
+            }
+        });
+  }
+  </script>

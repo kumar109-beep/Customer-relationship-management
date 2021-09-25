@@ -1,0 +1,117 @@
+{% load static %}
+{% include 'admin_template/header.html' %}
+  <!--begin::Wrapper-->
+  <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+      <!--begin::Header-->
+      {% include 'admin_template/inner-header.html' %}
+      <!--end::Header-->
+
+      <!--begin::Content-->
+ <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                        
+        <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+        <!--begin::Container-->
+        <div class="container-fluid">
+                            
+        
+ <!--begin::Row-->
+        <div class="row">
+                    <div class="col-lg-6 m-3">
+                        <h3 class="title mb-0"><strong>Report - Number Of Visit</strong></h3>
+                    </div>
+                </div>
+
+                <div class="row p-5" style="border: 1px solid rgb(202, 196, 196);border-radius: 5px">
+                    <div class="col-md-6 mt-3">
+                        <label class="titles"> <strong>Select Stores</strong></label>
+                        <a href="javascript:;" class="sel_all float-right" id='selectAllStore'>Select All</a>
+                        <select class="form-control select2" id="kt_select2_3" name="StorenameFilter"
+                            multiple="multiple" required>
+                            {% for i in storeArray %}
+                            <option value="{{i.storeID}}">{{i.store_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mt-3">
+                        <label class="titles"><strong>Select Date range</strong></label>
+                        <input type='text' name="dateFilter" class="form-control" id="kt_daterangepicker_1" readonly
+                            placeholder="Select time" type="text" />
+                    </div>
+
+                    <div class="col-lg-12 mt-3 text-right">
+                        <button class="btn btn-sm btn-primary" onclick="generateNoOfVisitReport()">Generate
+                            Report</button>
+                    </div>
+                </div>
+
+
+                <div class="row p-5 mt-2" style="border: 1px solid rgb(202, 196, 196);border-radius: 5px">
+                    <div class="col-md-12 mt-3">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class='text-center' scope="col">Report ID</th>
+                                    <th class='text-center' scope="col">Report Creation Time</th>
+                                    <th class='text-center' scope="col">Date Range</th>
+                                    <th class='text-center' scope="col">Download Report</th>
+                                    <!-- <th scope="col"></th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in supervisor_amountOfPurchase_Report_HistoryData %}
+                                <tr>
+                                    <th class='text-center' scope="row">{{i.reportID}}</th>
+                                    <td class='text-center'>{{i.time_stamp}}</td>
+                                    <td class='text-center'>{{i.dateRange}}</td>
+                                    <td class='text-center'><a title='view Report' href="{% url 'viewAdminNoOfvisitReport' i.id %}" class=''><i style="font-size: 20px;font-weight: 700;color: rgb(62, 12, 179);" class="fas fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a title='delete Report' href="{% url 'deleteAdminNoOfvisitReport' i.id %}" class='' onclick="return confirm('Are you sure, You want to delete this Report?')"><i style="font-size: 20px;font-weight: 700;color: rgb(214, 14, 14);" class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                    {% comment %} <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a title='Download Report' href="{% url 'downloadAdminNumberOfVisitReport' i.id %}" class=''
+                                            onclick="return confirm('Are you sure, You want to download this Report?')"><i
+                                                style="font-size: 20px;font-weight: 700;color: rgb(62, 12, 179);"
+                                                class="fas fa-file-download"></i></a>
+                                    </td> {% endcomment %}
+                                    <!-- <td><a title='view report details' href="{% url 'getReportDetails' i.id %}"><i
+                                                style="font-size: 20px;font-weight: 700;color: rgb(219, 216, 20);pointer-events: ;"
+                                                class="fas fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        <a title='delete group' href="{% url 'delete_report' i.id %}"
+                                            onclick="return confirm('Are you sure, You want to delete this Report?')"><i
+                                                style="font-size: 20px;font-weight: 700;color: rgb(218, 32, 32);pointer-events: ;"
+                                                class="fas fa-trash"></i></a>&nbsp;&nbsp;&nbsp;
+
+                                    </td> -->
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <!--end::Row-->
+        <!--end::Dashboard-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Entry-->
+</div>
+<!--end::Content-->
+<div class="modal fade   popup" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-modal="true"  >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                      <i aria-hidden="true" class="ki ki-close"></i>
+                  </button>
+              </div>
+              <div class="modal-body text-center  mb-5">
+                   <img src="{% static 'assets/images/check.png' %}">
+                   <h3 class="mb-5">Profile details are updated successfully. </h3>
+              </div>
+              
+      </div>
+  </div>
+</div>
+{% include 'admin_template/footer.html' %}
+<script src="{% static 'AdminAbacus/adminReports.js' %}"></script>

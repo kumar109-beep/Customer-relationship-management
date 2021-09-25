@@ -1,0 +1,283 @@
+{% include 'supervisor_template/header.html' %}
+{% load static %}
+
+<!--begin::Wrapper-->
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+	<!--begin::Header-->
+	{% comment %} <?php include('inner-header.php')?> {% endcomment %}
+	{% include 'supervisor_template/innerheader.html' %}
+	<!--end::Header-->
+
+	<!--begin::Content-->
+	<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+		<!--begin::Entry-->
+		<div class="d-flex flex-column-fluid">
+			<!--begin::Container-->
+			<div class="container-fluid">
+				<!--begin::Dashboard-->
+				<div class="row">
+				{% if errorMsg %}
+				<div class="col-lg-12">
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+				<strong>Warning!</strong> {{errorMsg}}.
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				</div>
+				{% endif %}
+				</div>
+				<div class="row">
+                    <div class="col-lg-6">
+						<!--begin::Card-->
+						<div class="card card-custom gutter-b">
+							<!--begin::Header-->
+							<div class="card-header h-auto">
+								<!--begin::Title-->
+								<div class="card-title py-5">
+									<h3 class="card-label" style="font-weight:700;color:rgb(29 186 170 / 93%);">
+										Store Detail
+									</h3>
+								</div>
+							</div>
+							<!--end::Header-->
+							<div class="card-body">
+                                <span style="font-size:15px;"><strong>Store ID : </strong>{{Storedata.storeID}}</span><br>
+								<p style='display:none;' id='currentStoreID'>{{Storedata.storeID}}</p>
+								<span style="font-size:15px;"><strong>Store Name : </strong>{{Storedata.store_name}}</span><br>
+                                <span style="font-size:15px;"><strong>Store Location : </strong>{{Storedata.store_location}},{{Storedata.store_city}}</span><br>
+                                <span style="font-size:15px;"><strong>Store State : </strong>{{Storedata.store_state}}</span>
+
+							</div>
+						</div>
+						<!--end::Card-->
+					</div>
+					<div class="col-lg-6">
+						<!--begin::Card-->
+						<div class="card card-custom gutter-b">
+							<div class="card-header h-auto">
+								<div class="card-title py-5">
+									<h3 class="card-label" style="font-weight:700;color:rgb(29 186 170 / 93%);">
+										Store Manager Detail
+									</h3>
+								</div>
+							</div>
+							<div class="card-body">
+								<span style="font-size:15px;"><strong>Manager Name : </strong>{{managerData.manager_name}}</span><br>
+                                <span style="font-size:15px;"><strong>Manager Contact : </strong>{{managerData.manager_contact}}</span><br>
+                                <span style="font-size:15px;"><strong>Manager Email : </strong>{{managerData.manager_email}}</span><br>
+                                <span style="font-size:15px;"><strong>Manager Entry Type : </strong>{{managerData.entry_type}}</span>
+
+							</div>
+						</div>
+						<!--end::Card-->
+					</div> 
+
+                    <div class="col-lg-6">
+						<!--begin::Card-->
+						<div class="card card-custom gutter-b">
+							<div class="card-header h-auto">
+								<div class="card-title py-5">
+									<h3 class="card-label" style="font-weight:700;color:rgb(29 186 170 / 93%);">
+										Filter Customers
+									</h3>
+								</div>
+							</div>
+							<div class="card-body">
+                            <div class="col-lg-12">
+                                <div class="form-group ico mb-1">
+                                    <select class="form-control" onchange="getSpecificCustomerData()" id='FilterID'>
+                                        <option class="d-none">Filter Customers</option>
+                                        <option value='Today'>Today</option>
+                                        <option value="Yesterday">Yesterday</option>
+                                        <option value="This Week">Last Week</option>
+                                        <option value="This Month">This Month</option>
+                                    </select>
+                                </div>
+                            </div>
+							</div>
+						</div>
+						<!--end::Card-->
+					</div>
+
+
+                    <div class="col-lg-6">
+						<!--begin::Card-->
+						<div class="card card-custom gutter-b">
+							<div class="card-header h-auto">
+								<div class="card-title py-5">
+									<h3 class="card-label" style="font-weight:700;color:rgb(29 186 170 / 93%);">
+										Filtered Customer Info
+									</h3>
+								</div>
+							</div>
+							<div class="card-body">
+                                <span style="font-size:15px;"><strong>Total Customers : </strong><span id='tcust'>0</span></span><br>
+                                <span style="font-size:15px;"><strong>New Customers : </strong><span id='ncust'>0</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="font-size:15px;"><strong>Old Customers : </strong><span id='ocust'>0</span></span>
+
+							</div>
+						</div>
+						<!--end::Card-->
+					</div>
+
+                     <div class="col-lg-12">
+						<!--begin::Card-->
+						<div class="card card-custom gutter-b">
+							<div class="card-header h-auto">
+								<div class="card-title py-5">
+									<h3 class="card-label" style="font-weight:700;color:rgb(29 186 170 / 93%);">
+										Filtered Customers
+									</h3>
+								</div>
+									<div class='text-right mt-4' style='display:none;'>
+									<span>Date Range : <strong id='dateRange'></strong></span>
+									</div>
+							</div>
+							<div class="card-body">
+                            <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col"><input type='checkbox'></th>
+                                        <th scope="col">Customer Name</th>
+                                        <th scope="col">Customer Contact</th>
+                                        <th scope="col">Customer Email</th>
+                                        {% comment %} <th scope="col">Customer Tier</th> {% endcomment %}
+                                        {% comment %} <th scope="col">Total Shopping</th> {% endcomment %}
+                                        </tr>
+                                    </thead>
+                                    <tbody id='customerdataappend'>
+                                        <tr>
+                                        <th scope="row">-</th>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+
+							</div>
+						</div>
+						<!--end::Card-->
+					</div>
+					{% comment %} 
+                    {% endcomment %}
+				</div>
+
+				<!--begin::Row-->
+				<div class="row">
+					<div class="col-lg-12">
+						<!--begin::Advance Table Widget 4-->
+						<div class="card card-custom card-stretch gutter-b">
+						</div>
+						<!--end::Advance Table Widget 4-->
+					</div>
+				</div>
+				<!--end::Row-->
+				<!--end::Dashboard-->
+			</div>
+			<!--end::Container-->
+		</div>
+		<!--end::Entry-->
+	</div>
+	<!--end::Content-->
+
+	{% include 'supervisor_template/footer.html' %}
+<script>
+function getSpecificCustomerData(){
+	Swal.fire({
+        position: 'center',
+        title: "<b style='font-size:20px;font-weight:500;color:#1eb6e9;'>Filtering data</b>",
+        showConfirmButton: false,
+        onOpen: () => {
+            Swal.showLoading();
+        }
+    })
+	var filterTag = $('#FilterID').val();
+	console.log('filterTag >> ',filterTag);
+
+	var storeId = $('#currentStoreID').text();
+	console.log('storeId >> ',storeId);
+	//Swal.fire(storeId);
+	//===========================================================================
+	//if(filterTag == 'Today'){
+	//	var today = new Date();
+	//	var dd = String(today.getDate()).padStart(2, '0');
+	//	var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+	//	var yyyy = today.getFullYear();
+
+	//	today = dd + '-' + mm + '-' + yyyy;
+	//	$('#dateRange').text('');
+	//	$('#dateRange').text(today);
+	//}else{
+	//	var prev_date = new Date();
+	//	prev_date.setDate(prev_date.getDate() - 1);
+	//	prev_date.toDateString()
+	//	$('#dateRange').text('');
+	//	$('#dateRange').text(prev_date);
+	//}
+	//===========================================================================
+	$.ajax({
+		type: 'GET',
+		url: "/filterSpecificStoreData",
+		data: { 'filterTag': filterTag,'storeId': storeId},
+		success: function (response) {
+			//------------------------------------------------
+			$('#tcust').text('');
+			$('#tcust').text(response['infoDict']['totalEntries']);
+
+			$('#ncust').text('');
+			if(filterTag == 'This Week'){
+				$('#ncust').text('-');
+			}else if(filterTag == 'This Month'){
+				$('#ncust').text('-');
+			}else{
+				$('#ncust').text(response['infoDict']['newEntries']);
+			}
+
+			$('#ocust').text('');
+			if(filterTag == 'This Week'){
+				$('#ocust').text('-');
+			}
+			else if(filterTag == 'This Month'){
+				$('#ocust').text('-');
+			}else{
+				$('#ocust').text(response['infoDict']['oldEntries']);
+			}
+			//------------------------------------------------
+			console.log(response);
+			var dataString = '';
+			if(response['filteredData'].length > 0){
+			for(var i=0;i<response['filteredData'].length;i++){
+				if(response['filteredData'][i]['customerEmail'] == ''){
+					var emailData = '<td>-</td>';
+				}else{
+					var emailData = '<td>'+response['filteredData'][i]['customerEmail']+'</td>';
+				}
+				var data = '<tr><th scope="row"><input type="checkbox"></th>\
+							<td>'+response['filteredData'][i]['customerName']+'</td>\
+							<td>'+response['filteredData'][i]['customerContact']+'</td>'+emailData+'</tr>';
+				dataString = dataString + data;
+				}
+			}else{
+				var data = '<th scope="row"></th>\
+							<td></td>\
+							<td>No record available!</td>\
+							<td></td>';
+				dataString = dataString + data;
+			}
+            Swal.close()
+			$('#customerdataappend').html('');
+			$('#customerdataappend').append(dataString);
+		}
+	})
+	//.then(function(){
+	//	location.reload();
+	//})
+	//===========================================================================
+}
+</script>
+
+
+

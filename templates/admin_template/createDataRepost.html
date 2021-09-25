@@ -1,0 +1,201 @@
+{% load static %}
+{% load overview_extras %}
+{% include 'admin_template/header.html' %}
+<!--begin::Wrapper-->
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+  <!--begin::Header-->
+  {% include "admin_template/inner-header.html" %}
+  <!--end::Header-->
+
+  <!--begin::Content-->
+  <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+    <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+      <!--begin::Container-->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 ">
+            <h4 class="title">Generate new Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;'>{{success_msg}}</span><span style='color:red;'>{{error_msg}}</span></h4> 
+          </div>
+          <div class="col-md-6 text-right">
+                <a href="{% url 'storeGroupDataReportList' id %}" class="btn btn-outline-primary add-cat " >Back</a>
+          </div>
+          <div class="col-lg-12">
+            <div class="card card-custom gutter-b example example-compact ">
+            <div class="col-lg-12">
+            <div class="card-body pt-3 pb-0">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group row">
+                                                    <div class="col-lg-6 mt-3 mb-3">
+                                                        <label><b>Report ID</b><span style='color:red;'> *</span></label>
+                                                        <span id="invalidmanagername" class="text-center"
+                                                            style="color: red;"></span>
+                                                        <input type="text" id="reportID" class="form-control"
+                                                            placeholder="Enter group name" name="supervisorName"
+                                                            onkeyup="" value="{{store_groups_id}}" style='cursor:not-allowed;' readonly />
+
+                                                    </div>
+                                                    <div class="col-lg-4 mt-3 mb-3">
+                                                        <label class="titles"><b>Select Report generation Method</b></label><br />
+                                                        <select class="selectpicker"  data-live-search="false"
+                                                            name="" onchange="getStores(this)" urlId ="{{id}}" id="reportmethodID">
+                                                            <option value='' class='d-none'>Select</option>
+                                                            <option value='OR'>OR</option>
+                                                            <option value='AND'>AND</option>
+                                                            <option value='VISIT NUMBER'>Visit Number</option>
+                                                            <option value='OR-NOT'>OR-NOT</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                              
+                                            <div class="col-lg-12 m-1 p-2" style="display: none;" id="headerTag">
+                                              <div class="col-lg-12">
+                                                <div class="form-group row">
+                                                    <div class="col-lg-6 mt-3 mb-3">
+                                                        <label><b>Number of Visits (N)</b></label>
+                                                        <input type="text" id="visitCount" class="form-control"
+                                                            placeholder="Enter no. of visits" name=""
+                                                            maxlength='4' onkeypress="return /[0-9]/i.test(event.key)" />
+
+                                                    </div>
+                                                    <div class="col-lg-4 mt-3 mb-3">
+                                                        <label class="titles"><b>Select Formula</b></label><br />
+                                                        <select class="selectpicker"  data-live-search="false"
+                                                            name="" onchange="getStores(this)" urlId ="{{id}}" id="formula">
+                                                            <option value='' class='d-none'>Select</option>
+                                                            <option value='Number of Visits>=N'>Number of Visits >= N</option>
+                                                           <option value='Number of Visits<N'>Number of Visits < N</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                          
+                                            <div class="col-lg-12" id='storeDetailAppend' style='display:none;'>
+                                                <table class="table">
+                                                    <thead class="thead-dark">
+                                                      <tr>
+                                                        <th scope="col">S.No.</th>
+                                                        <th scope="col">Store ID</th>
+                                                        <th scope="col">Store Name</th>
+                                                        <th scope="col"><input id="Selecte_AND_All" type="checkbox"  onclick="select_All_Inputs()">&nbsp;&nbsp;Select</th>
+                                                        <th scope="col" id='Deselect'><input id="DeSelecte_AND_All" type="checkbox">&nbsp;&nbsp;Deselect</th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody id='storeDataAppnd'>
+                                                      
+                                                    </tbody>
+                                                  </table>
+                                            </div>
+                                            </div>
+                                            {% comment %} </div> {% endcomment %}
+                                        </div>
+                                            <div class="col-md-12 mt-5 mb-2 pt-2 text-right">
+                                                <button  class="btn btn-primary"
+                                                    id='submitBtn' style="display: none;" onclick="generate_Report()">Generate Report</button>
+                                            </div>
+
+                                    </div>
+                            </div>
+
+            <!-- store manage detail -->
+
+
+          </div>
+        </div>
+      </div>
+      <!--end::Container-->
+
+
+    </div>
+    <!--end::Entry-->
+  </div>
+  <!--end::Content-->
+  <div class="modal fade   popup" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+            <i aria-hidden="true" class="ki ki-close"></i>
+          </button>
+        </div>
+        <div class="modal-body text-center  mb-5">
+          <img src="{% static 'assets/images/check.png' %}">
+          <h3 class="mb-5">Product category added successfully. </h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Selected Stores</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">S.No.</th>
+                  <th scope="col">Store ID</th>
+                  <th scope="col">Store Name</th>
+                </tr>
+              </thead>
+              <tbody id='storeAppendTable'>
+                
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="">+ Generate Report</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </script>
+  <script>
+    function search_table(){
+      // Declare variables 
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("search_field_input");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("paperTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td") ; 
+        for(j=0 ; j<td.length ; j++)
+        {
+          let tdata = td[j] ;
+          if (tdata) {
+            if (tdata.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+              break ; 
+            } else {
+              tr[i].style.display = "none";
+            }
+          } 
+        }
+      }
+    }
+        </script>
+  {% include 'admin_template/footer.html' %}
+<script src="{% static 'AdminAbacus/methodReport.js' %}"></script>
+

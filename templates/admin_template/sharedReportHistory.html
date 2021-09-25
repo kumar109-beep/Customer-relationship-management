@@ -1,0 +1,107 @@
+<!-- <?php  include('header.php'); ?> -->
+{% load static %}
+{% include 'admin_template/header.html' %}
+<!--begin::Wrapper-->
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+	<!--begin::Header-->
+	{% comment %} <?php include('inner-header.php')?> {% endcomment %}
+  {% include "admin_template/inner-header.html" %}
+	<!--end::Header-->
+
+	<!--begin::Content-->
+	<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+		<!--begin::Entry-->
+		<div class="d-flex flex-column-fluid">
+			<!--begin::Container-->
+			<div class="container-fluid">
+				<!--begin::Dashboard-->
+
+				<div class="row" id='' style="display: ;">
+					<div class="col-lg-12">
+						<table class="table">
+							<thead class="thead-dark">
+							  <tr>
+								<th scope="col">Receiver Name</th>
+								<th scope="col">Receiver Designation</th>
+								<th scope="col">Receiver Contact</th>
+								<th scope="col">Report ID</th>
+								<th scope="col">Report Method</th>
+								<th scope="col">Report Created At</th>
+								<th scope="col">Report Shared At</th>
+								<th scope="col">Download Report&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-cloud-download-alt"></i></th>
+							  </tr>
+							</thead>
+							<tbody id="">
+                            {% for i in sharedReportData %}
+							  <tr>
+								<th scope="row">{{i.supervisorID.supervisor_name}}</th>
+								<td scope="row">Supervisor</td>
+								<td>{{i.supervisorID.supervisor_contact}}</td>
+								<td>{{i.reportID.reportID}}</td>
+								<td>{{i.reportID.method}}</td>
+								<td>{{i.reportID.time_stamp}}</td>
+								<td>{{i.time_stamp}}</td>
+								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a title='Download Report' href="{% url 'fetchReportData' i.reportID.id %}" class='' onclick="return confirm('Are you sure, You want to download this Report?')"><i style="font-size: 20px;font-weight: 700;color: rgb(62, 12, 179);" class="fas fa-file-download"></i></a></td>
+							  </tr>
+                            {% endfor %}
+							</tbody>
+						  </table>
+					</div>
+				</div>
+				<!--end::Dashboard-->
+			</div>
+			<!--end::Container-->
+		</div>
+		<!--end::Entry-->
+	</div>
+	<!--end::Content-->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: 600;">Update User Password
+                </h5>
+                <span id='data' ></span>
+
+                {% comment %} <button id='dismissBtn' type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> {% endcomment %}
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Current Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword"  onkeyup="checkOldPassword()" aria-describedby="Enter current password"
+                        placeholder="Enter Current Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">New Password</label><br>
+					{% comment %} <small style="color:red;">*Password must contain 1 Capital,1 small alphabets 1 numeric and 1 special character</small> {% endcomment %}
+                    <input type="password" class="form-control" id="exampleInputPassword1" onkeyup="checkNewPassword()" placeholder="Enter new password" readonly style="cursor:not-allowed;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Re-enter New Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" onkeyup="checkNewPassword()" placeholder="Re-enter new password" readonly style="cursor:not-allowed;">
+                </div>
+            <input style="height:10px;width:10px;" class="" id="togglePassword" type='checkbox' onclick="showPassword()">&nbsp;&nbsp;Show Password
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id='cancelBtn' onclick="CancelBtn()">Cancel</button>
+                <button class="btn btn-primary" id='updateBtn' onclick='updatePassword()' disabled style="cursor:not-allowed;">
+                    Update
+                </button>
+            </div>
+        </div>
+	<input id='storeArrayID' style="display:none;" value='{{storenameArray}}'>
+    </div>
+</div>
+  {% include 'admin_template/footer.html' %}
+	<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
+	{% comment %} <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="{% static 'AdminAbacus/supervisorDash.js' %}"></script> {% endcomment %}

@@ -1,0 +1,61 @@
+{% load static %}
+<div id="kt_header" class="header header-fixed">
+    <!--begin::Container-->
+    <div class="container-fluid d-flex align-items-stretch justify-content-between">
+        <!--begin::Header Menu Wrapper-->
+        <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+            <!--begin::Header Menu-->
+
+            {% comment %} <button class="store_det btn" style="background:rgb(29 186 170 / 93%);">Store Supervisor Dashboard</button> {% endcomment %}
+            <div class="topbar-item">
+                {% comment %} ################################################### {% endcomment %}
+                {% comment %} <div class="dropdown"> {% endcomment %}
+                    {% comment %} <a class="store_det btn btn-sm" href="#" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:rgb(29 186 170 / 93%);">
+                        Store Supervisor Dashboard
+                    </a> {% endcomment %}
+                    <a class="store_det btn btn-sm" href="{% url 'ssder_supervisor' %}" role="button" id=""
+                        style="background:rgb(29 186 170 / 93%);" onclick="return confirm('Are you sure, You want to Send report to your registered e-mail?')">Send Daily Report to Email
+                    </a>
+                    {% comment %} <a class="store_det btn btn-sm" href="{% url 'ssder_to_all' %}" role="button" id=""
+                        style="background:rgb(29 186 170 / 93%);">Send Daily Report to All
+                    </a> {% endcomment %}
+
+                    
+                {% comment %} </div> {% endcomment %}
+                </div>
+            <!-- <a href="{% url 'home' %}" class="store_det btn  ">Home</a> -->
+
+            <!--end::Header Menu-->
+        </div>
+        <!--end::Header Menu Wrapper-->
+        <!--begin::Topbar-->
+        <div class="topbar">
+            <!--begin::User-->
+            <div class="topbar-item">
+                {% comment %} ################################################### {% endcomment %}
+                <div class="dropdown">
+                    <a class="store_det btn btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:rgb(29 186 170 / 93%);">
+                        {{request.user.first_name}}
+                        {{request.user.last_name}}
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        {% comment %} <a class="dropdown-item" href="#"><strong>Profile</strong></a> {% endcomment %}
+                        <a href="#" class="dropdown-item" data-toggle="modal" data-target="#logout">
+                            <strong>Logout</strong>
+                        </a>
+                    </div>
+                </div>
+                {% comment %} ###########################################################################
+                {% endcomment %}
+                {% comment %} </div>
+        </div> {% endcomment %}
+    </div>
+    <!--end::User-->
+</div>
+<!--end::Topbar-->
+</div>
+<!--end::Container-->
+</div>

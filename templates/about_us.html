@@ -1,0 +1,1808 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    /* Font Definitions */
+    @font-face {
+        font-family: "Cambria Math";
+        panose-1: 2 4 5 3 5 4 6 3 2 4;
+    }
+
+    @font-face {
+        font-family: Calibri;
+        panose-1: 2 15 5 2 2 2 4 3 2 4;
+    }
+
+    @font-face {
+        font-family: Cambria;
+        panose-1: 2 4 5 3 5 4 6 3 2 4;
+    }
+
+    @font-face {
+        font-family: "Segoe UI Emoji";
+        panose-1: 2 11 5 2 4 2 4 2 2 3;
+    }
+
+    @font-face {
+        font-family: "Segoe UI";
+        panose-1: 2 11 5 2 4 2 4 2 2 3;
+    }
+
+    /* Style Definitions */
+    p.'MsoNormal',
+    li.'MsoNormal',
+    div.'MsoNormal' {
+        margin-top: 0cm;
+        margin-right: 0cm;
+        margin-bottom: 10.0pt;
+        margin-left: 0cm;
+        line-height: 115%;
+        font-size: 11.0pt;
+        font-family: "Calibri", sans-serif;
+    }
+
+    h1 {
+        mso-style-link: "Heading 1 Char";
+        margin-top: 12.0pt;
+        margin-right: 0cm;
+        margin-bottom: 0cm;
+        margin-left: 0cm;
+        margin-bottom: .0001pt;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 16.0pt;
+        font-family: "Cambria", serif;
+        color: #365F91;
+        font-weight: normal;
+    }
+
+    h3 {
+        mso-style-link: "Heading 3 Char";
+        margin-top: 2.0pt;
+        margin-right: 0cm;
+        margin-bottom: 0cm;
+        margin-left: 0cm;
+        margin-bottom: .0001pt;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 12.0pt;
+        font-family: "Cambria", serif;
+        color: #243F60;
+        font-weight: normal;
+    }
+
+    span.Heading1Char {
+        mso-style-name: "Heading 1 Char";
+        mso-style-link: "Heading 1";
+        font-family: "Cambria", serif;
+        color: #365F91;
+    }
+
+    span.Heading3Char {
+        mso-style-name: "Heading 3 Char";
+        mso-style-link: "Heading 3";
+        font-family: "Cambria", serif;
+        color: #243F60;
+    }
+
+    .MsoChpDefault {
+        font-family: "Calibri", sans-serif;
+    }
+
+    .MsoPapDefault {
+        margin-bottom: 10.0pt;
+        line-height: 115%;
+    }
+
+    @page WordSection1 {
+        size: 595.3pt 841.9pt;
+        margin: 72.0pt 72.0pt 72.0pt 72.0pt;
+    }
+
+    div.WordSection1 {
+        page: WordSection1;
+    }
+</style>
+<center>
+    <div class='WordSection1'>
+
+        <p class=''MsoNormal'' align=center style='text-align:center'><span
+        style='font-size:18.0pt;line-height:115%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+        
+        <p class='MsoNormal' align=center style='text-align:center'><img width=223
+        height=131 id="Picture 1" src="{% static 'img/logo.png' %}"></p>
+        
+        <p class='MsoNormal' align=center style='text-align:center'><span
+        style='font-size:18.0pt;line-height:115%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+        
+        <p class='MsoNormal' align=center style='text-align:center'><span
+        style='font-family:"Segoe UI Emoji",sans-serif'>�� </span><u><span
+        style='font-size:18.0pt;line-height:115%;font-family:"Segoe UI Emoji",sans-serif'>&#128591;</span></u><u><span
+        style='font-size:18.0pt;line-height:115%;font-family:"Segoe UI",sans-serif'>Thank
+        You For Visiting Us. We have more to Offer You</span></u><u><span
+        style='font-size:18.0pt;line-height:115%;font-family:"Segoe UI Emoji",sans-serif'>&#128591;</span></u><span
+        style='font-size:18.0pt;line-height:115%;font-family:"Segoe UI",sans-serif'>���
+        </span></p>
+        
+        <p class='MsoNormal' align=center style='text-align:center'>&nbsp;</p>
+        
+        <p class='MsoNormal' align=center style='text-align:center'>&nbsp;</p>
+        
+        <p class='MsoNormal' style='margin-right:68.2pt'><span style='font-size:18.0pt;
+        line-height:115%;font-family:"Times New Roman",serif'>Our Different Stores and
+        their location</span></p>
+        
+        <table class=MsoTable15List7ColorfulAccent4 border=1 cellspacing=0
+         cellpadding=0 width=1562 style='width:1171.2pt;border-collapse:collapse;
+         border:none'>
+         <tr style='height:25.0pt'>
+          <td width=251 valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          background:white;padding:0cm 5.4pt 0cm 5.4pt;height:25.0pt'>
+          <p class='MsoNormal' align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:center;line-height:normal'><b><i><span style='font-size:14.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>Store Name</span></i></b></p>
+          </td>
+          <td width=216 valign=top style='width:162.0pt;border:double windowtext 2.25pt;
+          border-left:none;background:white;padding:0cm 5.4pt 0cm 5.4pt;height:25.0pt'>
+          <p class='MsoNormal' align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:center;line-height:normal'><b><i><span style='font-size:14.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>Location</span></i></b></p>
+          </td>
+          <td width=528 valign=top style='width:396.0pt;border:double windowtext 2.25pt;
+          border-left:none;background:white;padding:0cm 5.4pt 0cm 5.4pt;height:25.0pt'>
+          <p class='MsoNormal' align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:center;line-height:normal'><b><i><span style='font-size:14.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>Store Address</span></i></b></p>
+          </td>
+          <td width=567 valign=top style='width:424.95pt;border:double windowtext 2.25pt;
+          border-left:none;background:white;padding:0cm 5.4pt 0cm 5.4pt;height:25.0pt'>
+          <p class='MsoNormal' align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:center;line-height:normal'><b><i><span style='font-size:14.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>Store Email id</span></i></b></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>ABACUS Barabanki</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Barabanki</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Near
+          DM Awas Sai Plaza Near Easy Day Barabanki</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.barabanki@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>ABACUS Fzb</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Faizabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No. 1/13/364 Near Bata Showroom Civil Lines Fzb.</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>sisfaizabad@gmail.com
+          </span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>CK Fun</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Fun
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No -103, Fun Mall, Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>cku.fss.funlucknow@ck-india.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>CK Pallasio</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          Pallasio Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No -F-65, Phoenix Clasio, Sec 7, Gomti Nagar, Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ckj.fss.pmclucknow@ck-india.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>CK Phoenix</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          United Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          Mall, Alambagh, Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ckj.fss.phoenixlucknow@ck-india.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>D DECOR Fun</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Fun
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 246 Opp Fun Mall Gomtinagar Lko</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ddecor.lko@gmail.com
+          </span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>D DECOR Noida</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Noida</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>F
+          8 &amp; 9 Sec-18 Noida 201301</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ddecor.noidaup@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>FLYING MACHINE Allahabad</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Allahabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No F-22 Vcc Mall Civil Lines Allahabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacusfmallahabad@gmail.com
+          </span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>FLYING MACHINE Phoenix</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          United Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 04 Phoenix United Mall Alambagh Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>fmphoenixabacus@gmail.com
+          </span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>Nautica Pallasio</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          Pallasio Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Nautica
+          G-03 Phoenix Palassio Mall Gotmi Nagar Ext. Sec-07 Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>nauticapallasiolko@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>PEPE Allahabad</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Allahabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 81/32 Lal Bahadur Shashtri Marg Civil Lines Allahabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.pepealld@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>PEPE Faizabad</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Faizabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 128 Opp Uco Bank Rakabganj Faizabad.</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.pepefzd@gmail.com
+          </span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>PEPE Gkp</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Gorakhpur</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 4-5-6-7 M.P Building Golghar Gorakhpur</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.pepegorakhpur@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>PEPE Orion</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Orion</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>F-09
+          1 St Floor Orion Mall Mohddipur Gorkhpur</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.pepeorionmall@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>PEPE Phoenix</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          United Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 16-C Phoenix Mall Alambagh Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.pepephoenix@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>PEPE Vns</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Varanasi</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No B/27/97 Durgakund Varanasi</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.pepevns@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>Roadster</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          Pallasio Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          Pallasio Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>roadster.palassio@gmail.</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Agra</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Agra</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 2/208 A MG� Road Agra</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>skechers.agra@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Aligarh</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Aligarh</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 3/97 Hafeez Manzil Complex Marris Road Aligarh</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.skechersaligarh@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Allahabad</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Allahabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 81/32 Lal Bahadur Shashtri Marg Civil Lines Allahabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.skechersald@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Barelly</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Barelly</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>F-01-A
+          Phoenix Mall Bareilly</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>skechers.bly@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Barelly2</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Barelly</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 8 Civil Lines� Bareilly</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>skechers.bly2@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Bbm Meruth</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>BBM
+          Meruth</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 178-B 'Bbm Meerut</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>skechers.meerut@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Fun</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Fun
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 113 Fun Mall Gomtinagar Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.skechersfun@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Jhv</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Varanasi</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No-17 Jhv Mall Cantt Road Varansi</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>skechers.jhv@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Orion</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Orion</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No -F01 1 St Floor Orion Mall Mohddipur Gorakhpur</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>skechers.oriongkp@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Pallasio</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          Pallasio Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>F-65
+          Ist Flr PMC Palassio Sec-7 Gomti Nagar Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>skechers.plassio@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Phoenix</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          United Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No F-09 Phoenix Mall Alamabagh Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.phoenixskechers@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SKECHER Vns</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Varanasi;</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No -111 1 St Floor Ip Mall Sigra Varansi</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>skechers.vnssigra@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Aliganj</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Aliganj
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No A-1/22 Sec-B Aliganj Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>spykar.aliganj@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Aligarh</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Aligarh</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No. 3/107 A, Shree Mathur Complex Hemchardra Compund Marris Road Aligarh</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>spykaraligarh2@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Allahabad</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Allahabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Ff-01
+          Vcc Mall 1 St Florr Civil Lines Allhabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>spykarallahabad@theabacusindia.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Azamgarh</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Azamgarh</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 3-4 Dr Ashok Singh Building Civil Lies Azamgarh</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.spykarazamgarh@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Barabanki</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Barabanki</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Near
+          Dm Awas Sai Plaza Near Easy Day Barabanki</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>spykarbarabanki@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Bbm Meruth</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>BBM
+          Meruth</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 175 Hanuman Chowk Bbm Merrut</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>spykarbbm.abacus@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Fun</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Fun
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 204-B Fun Mall Gomtinagar Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.retail@gmail.com
+          </span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Fzb</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Faizabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 166 Durga Market Rakabganj Faizabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>abacus.faizabad@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Kanpur</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Kanpur</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No F9A Z Square Mall Kanpur</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>spykarkanpur@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Orion</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Orion</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>F-08
+          1 St Floor Orion Mall Mohddipur Gorkhpur</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>spykargorakhpur@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Pallasio</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          Pallasio Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          Pallasio Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>spykar.phoenixpallasio@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>SPYKAR Phoenix</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          United Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 04 Phoenix United Mall Alambagh Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>spykarphoenix@theabacusindia.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>UCB Aliganj</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Aliganj
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No A-1/22 Sec-B Aliganj Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ucb.aliganj@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>UCB Aligarh</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Aligarh</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 3/465 Marris Road Aligarh</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ucbaligarh@theabacusindia.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>UCB Allahabad</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Allahabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 14,15 Vcc Mall Civil Lines Allahabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ucbcivillines@theabacusindia.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>UCB Faizabad</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Faizabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 8/2/33 Rakanganj Faizabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ucbfaizabad@theabacusindia.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>UCB Fun</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Fun
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 111 Ugf Fun Mall Gomtinagar Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ucb.fr.republiclko@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>UCB Orion</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Orion</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>F-08
+          1 St Floor Orion Mall Mohddipur Gorkhpur</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ucb.oriongkp@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>UCB Phoenix</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          United Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 02 Phoenix United Mall Alambagh Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>benetton.phnx@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>UCB Saharaganj</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Saharaganj
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 10 Ground Floor Saharaganj Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ucbsaharaganj@theabacusindia.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>UCB Pallasio</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          Pallasio Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Unit
+          No. G-67,68 &amp; 73 Ground Floor Phoenix Palassio Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ucb.ppm.abacus@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>USPOLO Allahabad</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Allahabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 31/31 Sardar Patel Marg Civil Lines Allahabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>uspa.allahabad@gmail.com
+          </span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>USPOLO Fun</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Fun
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 12 Lgf Fun Mall Gomtinagar Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>uspafun@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>USPOLO KIDS Fun Kids</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Fun
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 11-A Fun Mall Gomtinagar Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>uspakidsfun.27@gmail.com
+          </span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>USPOLO Phoenix</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Phoenix
+          United Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No G-04 Phoenix Mall Alambagh Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>uspolophoenix@theabacusindia.com,uspaphoenixabacus@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>XIMI Allahabad</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Allahabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 81/32 Lal Bahadur Shashtri Marg Civil Lines Allahabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ximivogueallahabad@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border-top:none;
+          border-left:double windowtext 2.25pt;border-bottom:double windowtext 2.25pt;
+          border-right:solid #8064A2 1.0pt;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;
+          height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>XIMI Fun</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Fun
+          Lucknow</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Shop
+          No 12 Lgf Fun Mall Gomtinagar Lucknow</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>ximivoguelucknow@gmail.com</span></p>
+          </td>
+         </tr>
+         <tr style='height:14.5pt'>
+          <td width=251 nowrap valign=top style='width:188.25pt;border:double windowtext 2.25pt;
+          border-top:none;background:#B2A1C7;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+          text-align:right;line-height:normal'><i><span style='font-size:16.0pt;
+          font-family:"Cambria",serif;color:#5F497A'>Tanshq</span></i></p>
+          </td>
+          <td width=216 nowrap valign=top style='width:162.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Faizabad</span></p>
+          </td>
+          <td width=528 nowrap valign=top style='width:396.0pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>Showroom
+          No. 2/4/28 &amp; 30 Infront of Dist. Hospital Rekabganj Faizabad</span></p>
+          </td>
+          <td width=567 nowrap valign=top style='width:424.95pt;border-top:none;
+          border-left:none;border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+          background:#E5DFEC;padding:0cm 5.4pt 0cm 5.4pt;height:14.5pt'>
+          <p class='MsoNormal' style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+          normal'><span style='font-size:14.0pt;font-family:"Cambria",serif;color:#5F497A'>tanishqabacus2017@gmail.com</span></p>
+          </td>
+         </tr>
+        </table>
+        
+        <!-- <p class='MsoNormal'><span style='font-size:18.0pt;line-height:115%;font-family:
+        "Segoe UI",sans-serif'>�����������������������������������������������������������������������������������������
+        </span></p> -->
+        
+        <p class='MsoNormal'><span style='font-family:"Segoe UI Emoji",sans-serif'>&nbsp;</span></p>
+        
+        <p class='MsoNormal'><span style='font-family:"Segoe UI Emoji",sans-serif'>&nbsp;</span></p>
+        
+        <!-- <p class='MsoNormal'><span style='font-family:"Segoe UI Emoji",sans-serif'><img
+        width=1573 height=43 src="{% static 'img/logo.png' %}"></span></p> -->
+        
+        </div>
+</center>
+{% endblock content %}

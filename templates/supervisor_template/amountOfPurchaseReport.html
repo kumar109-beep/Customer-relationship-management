@@ -1,0 +1,190 @@
+<!-- <?php  include('header.php'); ?> -->
+{% include 'supervisor_template/header.html' %}
+{% load static %}
+<!--begin::Wrapper-->
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+    <!--begin::Header-->
+    {% comment %}
+    <?php include('inner-header.php')?> {% endcomment %}
+    {% include 'supervisor_template/innerheader.html' %}
+    <!--end::Header-->
+
+    <!--begin::Content-->
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+        <!--begin::Entry-->
+        <div class="d-flex flex-column-fluid">
+            <!--begin::Container-->
+            <div class="container-fluid">
+                <!--begin::Dashboard-->
+                <div class="row">
+                    <div class="col-lg-6 m-3">
+                        <h3 class="title mb-0"><strong>Report - Amount of Purchase</strong></h3>
+                    </div>
+                </div>
+
+                <div class="row p-5" style="border: 1px solid rgb(202, 196, 196);border-radius: 5px">
+                    <div class="col-md-6 mt-3">
+                        <label class="titles"> <strong>Select Stores</strong></label>
+                        <a href="javascript:;" class="sel_all float-right" id='selectAllStore'>Select All</a>
+                        <select class="form-control select2" id="kt_select2_3" name="StorenameFilter"
+                            multiple="multiple" required>
+                            {% for i in storeArray %}
+                            <option value="{{i.storeID}}">{{i.storeName}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mt-3">
+                        <label class="titles"><strong>Select Date range</strong></label>
+                        <input type='text' name="dateFilter" class="form-control" id="kt_daterangepicker_1" readonly
+                            placeholder="Select time" type="text" />
+                    </div>
+
+                    <div class="col-lg-12 mt-3 text-right">
+                        <button class="btn btn-sm btn-primary" onclick="generateAmountOfPurchaseReport()">Generate
+                            Report</button>
+                    </div>
+                </div>
+
+
+                <div class="row p-5 mt-2" style="border: 1px solid rgb(202, 196, 196);border-radius: 5px">
+                    <div class="col-md-12 mt-3">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Report ID</th>
+                                    <th scope="col">Report Creation Time</th>
+                                    <th scope="col">Date Range</th>
+                                    <th scope="col">Download Report</th>
+                                    <!-- <th scope="col"></th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in supervisor_amountOfPurchase_Report_HistoryData %}
+                                <tr>
+                                    <th scope="row">{{i.reportID}}</th>
+                                    <td>{{i.time_stamp}}</td>
+                                    <td>{{i.dateRange}}</td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a title='Download Report' href="{% url 'downloadAmountPurchaseReport' i.id %}" class=''
+                                            onclick="return confirm('Are you sure, You want to download this Report?')"><i
+                                                style="font-size: 20px;font-weight: 700;color: rgb(62, 12, 179);"
+                                                class="fas fa-file-download"></i></a>
+                                    </td>
+                                    <!-- <td><a title='view report details' href="{% url 'getReportDetails' i.id %}"><i
+                                                style="font-size: 20px;font-weight: 700;color: rgb(219, 216, 20);pointer-events: ;"
+                                                class="fas fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        <a title='delete group' href="{% url 'delete_report' i.id %}"
+                                            onclick="return confirm('Are you sure, You want to delete this Report?')"><i
+                                                style="font-size: 20px;font-weight: 700;color: rgb(218, 32, 32);pointer-events: ;"
+                                                class="fas fa-trash"></i></a>&nbsp;&nbsp;&nbsp;
+
+                                    </td> -->
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+                {% comment %} <div class="row" id='' style="display: ;">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Report ID</th>
+                                    <th scope="col">Report Method</th>
+                                    <th scope="col">Report Received</th>
+                                    <th scope="col">Download Report&nbsp;&nbsp;&nbsp;&nbsp;<i
+                                            class="fas fa-cloud-download-alt"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody id="">
+                                {% for i in receivedReportData %}
+                                <tr>
+                                    <td scope="row">{{i.reportID.reportID}}</td>
+                                    <td>{{i.reportID.method}}</td>
+                                    <td>{{i.time_stamp}}</td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                            title='Download Report' href="{% url 'fetchReportData' i.reportID.id %}"
+                                            class=''
+                                            onclick="return confirm('Are you sure, You want to download this Report?')"><i
+                                                style="font-size: 20px;font-weight: 700;color: rgb(62, 12, 179);"
+                                                class="fas fa-file-download"></i></a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div> {% endcomment %}
+                <!--end::Dashboard-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Entry-->
+    </div>
+    <!--end::Content-->
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-weight: 600;">Update User Password
+                    </h5>
+                    <span id='data'></span>
+
+                    {% comment %} <button id='dismissBtn' type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> {% endcomment %}
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Current Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword"
+                            onkeyup="checkOldPassword()" aria-describedby="Enter current password"
+                            placeholder="Enter Current Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">New Password</label><br>
+                        {% comment %} <small style="color:red;">*Password must contain 1 Capital,1 small alphabets 1
+                            numeric and 1 special character</small> {% endcomment %}
+                        <input type="password" class="form-control" id="exampleInputPassword1"
+                            onkeyup="checkNewPassword()" placeholder="Enter new password" readonly
+                            style="cursor:not-allowed;">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Re-enter New Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2"
+                            onkeyup="checkNewPassword()" placeholder="Re-enter new password" readonly
+                            style="cursor:not-allowed;">
+                    </div>
+                    <input style="height:10px;width:10px;" class="" id="togglePassword" type='checkbox'
+                        onclick="showPassword()">&nbsp;&nbsp;Show Password
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id='cancelBtn'
+                        onclick="CancelBtn()">Cancel</button>
+                    <button class="btn btn-primary" id='updateBtn' onclick='updatePassword()' disabled
+                        style="cursor:not-allowed;">
+                        Update
+                    </button>
+                </div>
+            </div>
+            <input id='storeArrayID' style="display:none;" value='{{storenameArray}}'>
+        </div>
+    </div>
+    {% include 'supervisor_template/footer.html' %}
+    <!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
+    <script src="{% static 'AdminAbacus/supervisorReports.js' %}"></script>

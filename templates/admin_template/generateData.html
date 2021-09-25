@@ -1,0 +1,278 @@
+{% load static %}
+{% load overview_extras %}
+{% include 'admin_template/header.html' %}
+<!--begin::Wrapper-->
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+  <!--begin::Header-->
+  {% include "admin_template/inner-header.html" %}
+  <!--end::Header-->
+
+  <!--begin::Content-->
+  <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+    <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+      <!--begin::Container-->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 ">
+            <h4 class="title">Generated Data Report List &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;'>{{success_msg}}</span><span style='color:red;'>{{error_msg}}</span></h4> <br>
+            <h5><strong>Group ID :</strong> {{storeGroupObj.groupID}} <strong> &nbsp;&nbsp;| &nbsp;&nbsp;Group Name :</strong> {{storeGroupObj.groupName}}</h5>
+          </div>
+          <div class="col-md-6 text-right">
+                {% comment %} <a href="{% url 'createStoreGroup' %}" class="btn btn-outline-primary add-cat " >+Add Store Group</a> {% endcomment %}
+                <a href="{% url 'CreateStoreGroupDataReport'  id %}" class="btn btn-outline-primary add-cat " >+ Generate New Report</a>
+                <a href="{% url 'storeGroupList' %}" class="btn btn-outline-primary add-cat " >Back</a>
+          </div>
+          <div class="col-lg-12">
+            <div class="card card-custom gutter-b example example-compact ">
+            <div class="col-lg-12">
+            <div class="card-body pt-3 pb-0">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" onkeyup="search_table()" name="" id="search_field_input"
+                                                        placeholder="Search">
+                                                    </div>
+                                                </div>
+                                                <table class="table" id="paperTable">
+                                                    <thead class="thead-dark">
+                                                      <tr>
+                                                        <th scope="col">Report ID</th>
+                                                        <th scope="col">Report Generation Method</th>
+                                                        <th scope="col">TimeStamp</th>
+                                                        <th>Download/Share Report</th>
+                                                        <th></th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {% if lent > 0 %}
+                                                        {% for i in reportData %}
+                                                            <tr>
+                                                                <th scope="row">{{i.reportID}}</th>
+                                                                {% if i.method == 'OR' %}
+                                                                  <td style='font-weight:900;font-size: 15px;color:rgb(16, 117, 199);'><strong>{{i.method}}</strong></td>
+                                                                {% elif i.method == 'AND'  %}
+                                                                  <td style='font-weight:900;font-size: 15px;color:rgb(12, 218, 46);'><strong>{{i.method}}</strong></td>
+                                                                {% elif i.method == 'VISIT SINCE' %}
+                                                                  <td style='font-weight:900;font-size: 15px;color:rgb(231, 217, 19);'><strong>{{i.method}}</strong></td>
+                                                                {% elif i.method == 'VISIT NUMBER' %}
+                                                                  <td style='font-weight:900;font-size: 15px;color:rgb(199, 20, 59);'><strong>{{i.method}}</strong></td>
+                                                                {% elif i.method == 'OR-NOT' %}
+                                                                <td style='font-weight:900;font-size: 15px;color:rgb(226, 28, 177);'><strong>{{i.method}}</strong></td>
+                                                                {% endif %}
+                                                                <td>{{i.time_stamp}}</td>
+                                                                <td>
+                                                                  <a title='Download Report' href="{% url 'fetchReportData' i.id %}" class='' onclick="return confirm('Are you sure, You want to download this Report?')"><i style="font-size: 20px;font-weight: 700;color: rgb(62, 12, 179);" class="fas fa-file-download"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                                  <a title='share Report' reportID="{{i.id}}" onclick="getreportID(this)" class='' data-toggle="modal" data-target="#exampleModalCenter" style='cursor:pointer;' data-keyboard="false" data-backdrop="static"><i style="font-size: 20px;font-weight: 700;color: rgb(55, 233, 159);" class="fas fa-share-alt"></i></a>
+
+                                                                </td>
+                                                                <td>
+                                                                    <a title='view report details' href="{% url 'getReportDetails' i.id %}" ><i style="font-size: 20px;font-weight: 700;color: rgb(219, 216, 20);" class="fas fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                                    <a title='delete group' href="{% url 'delete_report' i.id %}" onclick="return confirm('Are you sure, You want to delete this Report?')"><i style="font-size: 20px;font-weight: 700;color: rgb(218, 32, 32);" class="fas fa-trash"></i></a>&nbsp;&nbsp;&nbsp;
+
+                                                                    
+                                                                </td>
+                                                            </tr>
+                                                        {% endfor %}
+                                                    </tbody>
+                                                  </table>
+                                                    {% else %}
+                                                    </tbody>
+                                                  </table>
+                                                  <div class="text-center"><br>
+                                                      <h3> - No Record Available - </h3><br>
+                                                  </div>
+                                                    {% endif %}
+                                                    
+                                            </div>
+                                        </div>
+
+                                    </div>
+            </div>
+
+            <!-- store manage detail -->
+
+
+          </div>
+        </div>
+      </div>
+      <!--end::Container-->
+
+
+    </div>
+    <!--end::Entry-->
+  </div>
+  <!--end::Content-->
+  <div class="modal fade   popup" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+            <i aria-hidden="true" class="ki ki-close"></i>
+          </button>
+        </div>
+        <div class="modal-body text-center  mb-5">
+          <img src="{% static 'assets/images/check.png' %}">
+          <h3 class="mb-5">Product category added successfully. </h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Share Report</h5>
+        <p id='appendReportID' style="display:none;"></p>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Supervisor Name</th>
+              <th scope="col">Supervisor Email</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for i in supervisorData %}
+            <tr>
+              <th scope="row"><input type="checkbox" class="selectSupervisor" name="chk" supervisor_fk="{{i.id}}"></th>
+              <td>{{i.supervisor_name}}</td>
+              <td>{{i.supervisor_email}}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick='ShareReport()' id='shareBtn'>Share</button>
+        <button class="btn btn-primary btn-sm" type="button" disabled id='spinnerBTn' style='display:none;'> 
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span class="sr-only">Sharing ...</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+  </script>
+  <script>
+    function search_table(){
+      // Declare variables 
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("search_field_input");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("paperTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td") ; 
+        for(j=0 ; j<td.length ; j++)
+        {
+          let tdata = td[j] ;
+          if (tdata) {
+            if (tdata.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+              break ; 
+            } else {
+              tr[i].style.display = "none";
+            }
+          } 
+        }
+      }
+    }
+  </script>
+  {% include 'admin_template/footer.html' %}
+
+<script>
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+
+function getreportID(thisTxt){
+  var reportID = $(thisTxt).attr('reportID');
+  $('#appendReportID').text('');
+  $('#appendReportID').text(reportID);
+}
+
+function ShareReport(){
+  $('#shareBtn').css('display','none');
+  $('#spinnerBTn').css('display','');
+
+  var supervisorFkArray = [];
+  var report_fk = $('#appendReportID').text();
+  $('.selectSupervisor:checkbox:checked').each(function() { supervisorFkArray.push($(this).attr('supervisor_fk'));});
+  console.log('report_fk >>> ',report_fk);
+  console.log('supervisorFkArray >>> ',supervisorFkArray);
+
+  if(supervisorFkArray.length == 0){
+    alert('Select Atleast 1 supervisor');
+    $('#shareBtn').css('display','');
+    $('#spinnerBTn').css('display','none');
+    return false;
+  }
+  // -------------------------------------------------------------
+    const csrftoken = getCookie('csrftoken');
+    $.ajax({
+        type: 'POST',
+        url: "/shared-reports",
+        headers: { 'X-CSRFToken': csrftoken },
+        data: { 'supervisor_fk[]': supervisorFkArray,'report_fk': report_fk},
+        success: function (response) {
+            console.log(response['responseData']);
+            if(response['responseData'] == 'success'){
+              alert('Report shared Successfully to selected supervisors.');
+              window.location.reload();
+            }else{
+              alert('something went wrong! Please Try after some time or Report this to your development team.');
+              $('#shareBtn').css('display','');
+              $('#spinnerBTn').css('display','none');
+              return false;
+            }
+        }
+    });
+  // -------------------------------------------------------------
+
+}
+</script>
+
+
+
+<script>
+function myFunction() {
+  var txt;
+  if (confirm("Press a button!")) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
